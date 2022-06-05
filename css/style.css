@@ -1,0 +1,239 @@
+/* colors */
+
+:root {
+  --black: #000000;
+  --white: #ffffff;
+}
+
+/* general styles */
+
+html {
+  color: var(--black);
+  font-family: futura-pt, sans-serif;
+  font-size: 6vw;
+}
+
+body {
+  background-color: var(--white);
+}
+
+h1 {
+  font-size: 1rem;
+  text-align: center;
+}
+
+nav {
+  background-color: var(--white);
+  border-top: 1px solid var(--black);
+  bottom: 0;
+  padding-bottom: 0.66rem;
+  position: fixed;
+  width: calc(100% - 1.33rem);
+  z-index: 10;
+}
+
+nav ul {
+  column-gap: 0.43rem;
+  display: flex;
+  flex-direction: column;
+  font-size: 0.7rem;
+  justify-content: space-between;
+}
+
+nav ul li {
+  background-color: var(--white);
+  cursor: pointer;
+  padding: 0.1rem 0.26rem;
+  transition: filter 0.3s;
+}
+
+nav ul li:hover {
+  filter: invert(100%);
+}
+
+nav ul a li.instagram {
+  align-items: center;
+  display: flex;
+  height: 100%;
+  padding-bottom: 0.2rem;
+  padding-top: 0.2rem;
+}
+
+nav ul a li.instagram img {
+  height: 0.66rem;
+}
+
+nav ul li.active {
+  cursor: default;
+  filter: invert(100%);
+  pointer-events: none;
+}
+
+header {
+  display: flex;
+  justify-content: center;
+}
+
+header img.logo {
+  width: 5rem;
+  margin-bottom: 1rem;
+}
+
+section {
+  margin-bottom: 8rem;
+}
+
+section.content {
+  font-size: 0.65rem;
+  font-family: nimbus-sans, sans-serif;
+  font-weight: 300;
+  padding: 0 0.3rem;
+}
+
+section.content > * {
+  text-align: justify;
+  margin-bottom: 1rem;
+}
+
+section.content > img.content-image {
+  width: 100%;
+}
+
+section.content p.placeholder {
+  text-align: center;
+  font-weight: 800;
+  font-style: italic;
+}
+
+div.quotation {
+  margin: 0.5rem auto;
+  width: 10rem;
+  padding: 0.1rem 0.2rem;
+  text-align: center;
+}
+
+div.quotation p.quote {
+  font-size: 0.6rem;
+  margin: 0.2rem 0;
+  position: relative;
+  white-space: pre-wrap;
+}
+
+div.quotation p.quote-attribution {
+  font-size: 0.5rem;
+  opacity: 0.6;
+}
+
+div.quotation .quote::before {
+  content: "\201c";
+  font-family: sans-serif;
+  font-size: 2rem;
+  position: absolute;
+  text-align: center;
+  transform: translate(-1rem, -0.7rem);
+}
+
+div.quotation .quote::after {
+  content: "\201d";
+  font-family: sans-serif;
+  font-size: 2rem;
+  position: absolute;
+  text-align: center;
+  transform: translate(0.2rem, -0.5rem);
+}
+
+/* index.html styles */
+
+body#index div.jumbotron {
+  align-items: center;
+  background-color: var(--black);
+  color: var(--white);
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  justify-content: center;
+  transition: background-color 0.2s, color 0.2s;
+  width: 100vw;
+}
+
+body#index div.jumbotron img.logo {
+  filter: invert(100%);
+  transition: filter 0.2s;
+  width: 15rem;
+}
+
+body#index div.jumbotron:hover {
+  background-color: var(--white);
+  color: var(--black);
+}
+
+body#index div.jumbotron:hover img.logo {
+  filter: invert(0%);
+}
+
+/* non index.html styles */
+
+body:not(#index) {
+  margin: 1rem 0.66rem;
+}
+
+/* responsive styles */
+
+@media only screen and (min-width: 481px) {
+  html {
+    font-size: 25px;
+  }
+
+  body:not(#index) {
+    margin: 0.5rem auto;
+    width: 18.33rem;
+  }
+
+  nav {
+    border-top: none;
+    position: inherit;
+    width: inherit;
+  }
+
+  nav ul {
+    flex-direction: row;
+  }
+
+  nav ul li {
+    border-radius: 0.16rem;
+  }
+
+  header img.logo {
+    margin-bottom: 0.3rem;
+    width: 5rem;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  html {
+    font-size: 35px;
+  }
+}
+
+@media only screen and (min-width: 992px) {
+  html {
+    font-size: 45px;
+  }
+}
+
+@media only screen and (min-width: 1200px) {
+  html {
+    font-size: 50px;
+  }
+}
+
+@media only screen and (min-width: 768px) and (max-height: 414px) {
+  body#index div.jumbotron h1 {
+    font-size: 0.8rem;
+  }
+
+  body#index div.jumbotron img.logo {
+    width: 12rem;
+  }
+}
