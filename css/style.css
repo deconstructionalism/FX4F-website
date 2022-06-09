@@ -178,6 +178,12 @@ body:not(#index) {
   margin: 1rem 0.66rem;
 }
 
+/* fest.html styles */
+
+body#about img.content-image {
+  filter: contrast(1.2);
+}
+
 /* responsive styles */
 
 @media only screen and (min-width: 481px) {
