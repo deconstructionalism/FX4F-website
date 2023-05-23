@@ -1,38 +1,98 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta
+    http-equiv="X-UA-Compatible"
+    content="IE=edge"
+  >
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
 
-  <title>FUCK THE FOURTH FEST 2022</title>
+  <title>FUCK THE FOURTH FEST</title>
 
-  <link rel="stylesheet" type="text/css" href="css/reset.css">
-  <link rel="stylesheet" type="text/css" href="css/style.css">
-  <link rel="stylesheet" href="https://use.typekit.net/vgo8lwy.css">
-  <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+  <link
+    rel="stylesheet"
+    type="text/css"
+    href="css/reset.css"
+  >
+  <link
+    rel="stylesheet"
+    type="text/css"
+    href="css/style.css"
+  >
+  <link
+    rel="stylesheet"
+    href="https://use.typekit.net/vgo8lwy.css"
+  >
+  <link
+    rel="icon"
+    href="images/favicon.ico"
+    type="image/x-icon"
+  >
 
-  <script src="https://kit.fontawesome.com/ff7c372560.js" crossorigin="anonymous"></script>
+  <script
+    src="https://kit.fontawesome.com/ff7c372560.js"
+    crossorigin="anonymous"
+  ></script>
 </head>
 
 <body id="index">
 
   <div class="jumbotron">
 
-    <a href="fest.html">
+    <img
+      class="logo"
+      src="images/logo.svg"
+      alt="Fuck The Fourth Fest Logo"
+    >
 
-      <img class="logo" src="images/logo.svg" alt="Fuck The Fourth Fest Logo">
+    <h1 id="wait-for-the-drop">WAIT FOR THE DROP</h1>
 
-      <h1>FUCK THE FOURTH FEST</h1>
+    <h1 id="countdown-timer">
+      ...
+    </h1>
 
-      <h1>JULY 3 2022</h1>
+    <a
+      href="https://www.instagram.com/fuckthefourthfest/"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
 
-      <h1>@AS220</h1>
+      <img
+        id="instagram-icon"
+        alt="Instagram icon"
+        src="images/instagram-icon.svg"
+      >
 
     </a>
 
   </div>
 
 </body>
+
+<script>
+  "use strict";
+
+  var dropTime = new Date("2023-05-24T21:00:00").getTime();
+  var interval = setInterval(function () {
+    var now = new Date().getTime();
+    var timeLeft = dropTime - now;
+    var days = Math.floor(timeLeft / (1000 * 60 * 60 * 24));
+    var hours = Math.floor(timeLeft % (1000 * 60 * 60 * 24) / (1000 * 60 * 60)) - 4;
+    var minutes = Math.floor(timeLeft % (1000 * 60 * 60) / (1000 * 60));
+    var seconds = Math.floor(timeLeft % (1000 * 60) / 1000);
+    document.getElementById("countdown-timer").innerHTML = days + "d " + hours + "h " + minutes + "m " + seconds + "s ";
+    if (timeLeft < 0) {
+      clearInterval(interval);
+      document.getElementById("wait-for-the-drop").innerHTML = "INCOMING!";
+      document.getElementById("countdown-timer").remove();
+    }
+  }, 1000);
+
+</script>
 
 </html>

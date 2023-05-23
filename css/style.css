@@ -243,3 +243,25 @@ body#about img.content-image {
     width: 12rem;
   }
 }
+
+/* styles for site drop only */
+
+body#index div.jumbotron {
+  cursor: default;
+}
+
+body#index div.jumbotron h1#countdown-timer {
+  text-transform: uppercase;
+  font-size: 0.8rem;
+}
+
+body#index div.jumbotron img#instagram-icon {
+  margin-top: 0.3rem;
+  height: 0.7rem;
+  transition: filter 0.2s;
+  filter: invert(100%);
+}
+
+body#index div.jumbotron:hover img#instagram-icon {
+  filter: invert(0%);
+}
