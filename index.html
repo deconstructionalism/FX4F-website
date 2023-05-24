@@ -77,22 +77,30 @@
 <script>
   "use strict";
 
-  var dropTime = new Date("2023-05-24T21:00:00").getTime();
+  function renderIfNotZero (value, increment) {
+    if (value > 0) {
+      return value + increment + " ";
+    } else {
+      return "";
+    }
+  }
+
+  var dropTime = 1684962000000;
+
   var interval = setInterval(function () {
     var now = new Date().getTime();
     var timeLeft = dropTime - now;
     var days = Math.floor(timeLeft / (1000 * 60 * 60 * 24));
-    var hours = Math.floor(timeLeft % (1000 * 60 * 60 * 24) / (1000 * 60 * 60)) - 4;
+    var hours = Math.floor(timeLeft % (1000 * 60 * 60 * 24) / (1000 * 60 * 60));
     var minutes = Math.floor(timeLeft % (1000 * 60 * 60) / (1000 * 60));
     var seconds = Math.floor(timeLeft % (1000 * 60) / 1000);
-    document.getElementById("countdown-timer").innerHTML = days + "d " + hours + "h " + minutes + "m " + seconds + "s ";
+    document.getElementById("countdown-timer").innerHTML = renderIfNotZero(days, 'd') + renderIfNotZero(hours, 'h') + renderIfNotZero(minutes, 'm') + renderIfNotZero(seconds, 's');
     if (timeLeft < 0) {
       clearInterval(interval);
       document.getElementById("wait-for-the-drop").innerHTML = "INCOMING!";
       document.getElementById("countdown-timer").remove();
     }
   }, 1000);
-
 </script>
 
 </html>
