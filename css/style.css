@@ -139,7 +139,7 @@ div.quotation .quote::after {
   font-size: 2rem;
   position: absolute;
   text-align: center;
-  transform: translate(0.2rem, -0.5rem);
+  transform: translate(3.2rem, -0.5rem);
 }
 
 /* index.html styles */
@@ -178,10 +178,22 @@ body:not(#index) {
   margin: 1rem 0.66rem;
 }
 
-/* fest.html styles */
+/* about.html styles */
 
 body#about img.content-image {
   filter: contrast(1.2);
+}
+
+/* fest.html styles */
+
+body#fest p.flyer-attribution {
+  font-size: 0.4rem;
+  font-family: nimbus-sans, sans-serif;
+  text-align: right;
+}
+
+body#fest p.flyer-attribution a:hover {
+  color: #fe5000;
 }
 
 /* responsive styles */
