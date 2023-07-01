@@ -196,6 +196,48 @@ body#fest p.flyer-attribution a:hover {
   color: #fe5000;
 }
 
+body#fest p.inform-about-scrolling-set-order {
+  font-family: nimbus-sans, sans-serif;
+  font-size: 0.4rem;
+  font-style: italic;
+  text-align: right;
+}
+
+body#fest div.two-part-set-order {
+  padding-top: 1rem;
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+  scroll-behavior: smooth;
+}
+
+body#fest div.two-part-set-order img {
+  max-width: 200%;
+  width: 200%;
+}
+
+body#fest div.two-part-set-order div.right-button,
+body#fest div.two-part-set-order div.left-button {
+  position: absolute;
+  top: 1rem;
+  width: 1.2rem;
+  height: 1.2rem;
+}
+
+body#fest div.two-part-set-order div.right-button:hover,
+body#fest div.two-part-set-order div.left-button:hover {
+  cursor: pointer;
+}
+
+body#fest div.two-part-set-order div.left-button {
+  right: -1.2rem;
+}
+
+body#fest div.two-part-set-order div.right-button {
+  right: 0;
+}
+
+
 /* responsive styles */
 
 @media only screen and (min-width: 481px) {
@@ -231,6 +273,32 @@ body#fest p.flyer-attribution a:hover {
 @media only screen and (min-width: 768px) {
   html {
     font-size: 35px;
+  }
+
+  body#fest div.two-part-set-order img {
+    max-width: 100%;
+    width: 100%;
+  }
+
+  body#fest div.two-part-set-order div.right-button,
+  body#fest div.two-part-set-order div.left-button {
+    pointer-events: none;
+  }
+
+  body#fest div.two-part-set-order div.right-button {
+    background-color: white;
+    right: 50%;
+    height: 0.6rem;
+  }
+
+  body#fest div.two-part-set-order div.left-button {
+    background-color: black;
+    right: calc(50% - 1.2rem);
+    height: 0.6rem;
+  }
+
+  body#fest p.inform-about-scrolling-set-order {
+    display: none;
   }
 }
 
