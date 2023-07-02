@@ -268,12 +268,6 @@ body#fest div.two-part-set-order div.right-button {
     margin-bottom: 0.3rem;
     width: 5rem;
   }
-}
-
-@media only screen and (min-width: 768px) {
-  html {
-    font-size: 35px;
-  }
 
   body#fest div.two-part-set-order img {
     max-width: 100%;
@@ -299,6 +293,12 @@ body#fest div.two-part-set-order div.right-button {
 
   body#fest p.inform-about-scrolling-set-order {
     display: none;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  html {
+    font-size: 35px;
   }
 }
 
